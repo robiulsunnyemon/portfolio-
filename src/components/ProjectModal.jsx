@@ -41,7 +41,7 @@ export default function ProjectModal({ project, onClose }) {
 
           {/* Category Badge on top of image */}
           <div className="absolute bottom-4 left-6 flex items-center gap-2">
-            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-950/90 text-cyan-300 border border-cyan-500/40 backdrop-blur-md">
+            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-rose-950/90 text-rose-300 border border-rose-500/40 backdrop-blur-md">
               {project.categoryLabel}
             </span>
             {project.isPlayStore && (
@@ -69,12 +69,12 @@ export default function ProjectModal({ project, onClose }) {
           {project.features && (
             <div className="space-y-3">
               <h4 className="text-xs uppercase tracking-wider text-slate-400 font-semibold flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-cyan-400" /> Key Features & Architecture
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Key Features & Architecture
               </h4>
               <div className="space-y-2.5">
                 {project.features.map((feature, idx) => (
                   <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
                     <span>{feature}</span>
                   </div>
                 ))}
@@ -121,7 +121,7 @@ export default function ProjectModal({ project, onClose }) {
                 href={project.pubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-xs shadow-md shadow-cyan-600/30 transition-all"
+                className="btn-sunset inline-flex items-center gap-2 px-4 py-2 rounded-xl text-white font-semibold text-xs shadow-md shadow-rose-950/40 transition-all"
               >
                 <Package className="w-4 h-4" />
                 Pub.dev Package

@@ -58,7 +58,7 @@ export default function Contact() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-950/70 border border-rose-500/30 text-rose-300 text-xs font-semibold uppercase tracking-wider">
             <MessageSquare className="w-3.5 h-3.5" /> Get in Touch
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -82,14 +82,14 @@ export default function Contact() {
               {/* Email Card with Copy Button */}
               <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3 overflow-hidden">
-                  <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="overflow-hidden">
                     <p className="text-xs text-slate-400 font-medium">Direct Email</p>
                     <a 
                       href={`mailto:${personalInfo.email}`}
-                      className="text-sm font-semibold text-white hover:text-cyan-400 transition-colors truncate block"
+                      className="text-sm font-semibold text-white hover:text-rose-400 transition-colors truncate block"
                     >
                       {personalInfo.email}
                     </a>
@@ -113,7 +113,7 @@ export default function Contact() {
               <div className="space-y-3 text-sm text-slate-300">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-slate-800/80 flex items-center justify-center text-slate-400 shrink-0">
-                    <Building2 className="w-4 h-4 text-cyan-400" />
+                    <Building2 className="w-4 h-4 text-rose-400" />
                   </div>
                   <div>
                     <span className="text-xs text-slate-400 block">Current Workplace</span>
@@ -123,7 +123,7 @@ export default function Contact() {
 
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-slate-800/80 flex items-center justify-center text-slate-400 shrink-0">
-                    <MapPin className="w-4 h-4 text-rose-400" />
+                    <MapPin className="w-4 h-4 text-orange-400" />
                   </div>
                   <div>
                     <span className="text-xs text-slate-400 block">Based in</span>
@@ -141,7 +141,7 @@ export default function Contact() {
                       href={personalInfo.publisherUrl} 
                       target="_blank" 
                       rel="noreferrer"
-                      className="font-semibold text-cyan-400 hover:underline"
+                      className="font-semibold text-rose-400 hover:underline"
                     >
                       {personalInfo.publisher}
                     </a>
@@ -235,7 +235,7 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         placeholder="e.g. Alex Rahman"
-                        className="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-800 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 text-sm text-white placeholder-slate-500 transition-colors outline-hidden"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-800 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 text-sm text-white placeholder-slate-500 transition-colors outline-hidden"
                       />
                     </div>
 
@@ -250,7 +250,7 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         placeholder="alex@company.com"
-                        className="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-800 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 text-sm text-white placeholder-slate-500 transition-colors outline-hidden"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-800 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 text-sm text-white placeholder-slate-500 transition-colors outline-hidden"
                       />
                     </div>
                   </div>
@@ -265,7 +265,7 @@ export default function Contact() {
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder="e.g. Flutter Mobile Architecture Consultation"
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-800 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 text-sm text-white placeholder-slate-500 transition-colors outline-hidden"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-800 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 text-sm text-white placeholder-slate-500 transition-colors outline-hidden"
                     />
                   </div>
 
@@ -280,14 +280,14 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="Hi Robiul, I would like to discuss..."
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-800 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 text-sm text-white placeholder-slate-500 transition-colors outline-hidden resize-none"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-800 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 text-sm text-white placeholder-slate-500 transition-colors outline-hidden resize-none"
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
                     disabled={isSending}
-                    className="w-full py-3 px-6 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                    className="btn-sunset w-full py-3 px-6 rounded-xl text-white font-semibold text-sm shadow-lg shadow-rose-950/40 hover:shadow-rose-900/50 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                   >
                     {isSending ? (
                       <span>Sending...</span>

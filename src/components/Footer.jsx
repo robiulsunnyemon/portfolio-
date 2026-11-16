@@ -22,7 +22,7 @@ export default function Footer({ onOpenAdmin }) {
           
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-cyan-500/20">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-rose-500 via-pink-500 to-amber-500 flex items-center justify-center text-white shadow-md shadow-rose-950/40">
               <Terminal className="w-4 h-4 text-white" />
             </div>
             <div className="text-left">
@@ -48,7 +48,7 @@ export default function Footer({ onOpenAdmin }) {
               href={personalInfo.socials.pubDev}
               target="_blank"
               rel="noreferrer"
-              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-slate-700 transition-colors"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-amber-400 hover:border-slate-700 transition-colors"
               title="Pub.dev Verified Publisher"
             >
               <Package className="w-4 h-4" />
@@ -57,7 +57,7 @@ export default function Footer({ onOpenAdmin }) {
               href={personalInfo.socials.hashnode}
               target="_blank"
               rel="noreferrer"
-              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-blue-400 hover:border-slate-700 transition-colors"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-rose-400 hover:border-slate-700 transition-colors"
               title="Hashnode Tech Blogs"
             >
               <HashnodeIcon className="w-4 h-4" />
@@ -66,7 +66,7 @@ export default function Footer({ onOpenAdmin }) {
               href={personalInfo.socials.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-blue-400 hover:border-slate-700 transition-colors"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-sky-400 hover:border-slate-700 transition-colors"
               title="LinkedIn"
             >
               <LinkedinIcon className="w-4 h-4" />
@@ -74,7 +74,7 @@ export default function Footer({ onOpenAdmin }) {
 
             <button
               onClick={onOpenAdmin}
-              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-slate-700 transition-colors ml-1"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-rose-400 hover:border-slate-700 transition-colors ml-1"
               title="Admin Git-CMS Portal"
             >
               <Lock className="w-4 h-4" />
@@ -82,7 +82,7 @@ export default function Footer({ onOpenAdmin }) {
 
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-slate-700 transition-colors"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-rose-400 hover:border-slate-700 transition-colors"
               title="Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />

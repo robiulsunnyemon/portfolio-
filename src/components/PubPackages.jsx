@@ -35,7 +35,7 @@ export default function PubPackages() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="space-y-3 max-w-2xl text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-950/80 border border-rose-500/30 text-rose-400 text-xs font-semibold uppercase tracking-wider">
               <Package className="w-3.5 h-3.5" />
               Verified Pub.dev Publisher
             </div>
@@ -48,7 +48,7 @@ export default function PubPackages() {
                 href={personalInfo.publisherUrl} 
                 target="_blank" 
                 rel="noreferrer" 
-                className="text-cyan-400 hover:underline font-mono"
+                className="text-rose-400 hover:underline font-mono"
               >
                 {personalInfo.publisher}
               </a>
@@ -60,10 +60,10 @@ export default function PubPackages() {
             href={personalInfo.publisherUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700/80 hover:border-cyan-500/50 text-slate-200 hover:text-white text-sm font-semibold transition-all hover:bg-slate-800 self-start md:self-auto"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#12192a] border border-slate-700/80 hover:border-rose-500/50 text-slate-200 hover:text-white text-sm font-semibold transition-all hover:bg-slate-800 self-start md:self-auto"
           >
             <span>Visit Publisher on pub.dev</span>
-            <ExternalLink className="w-4 h-4 text-cyan-400" />
+            <ExternalLink className="w-4 h-4 text-rose-400" />
           </a>
         </div>
 
@@ -180,7 +180,7 @@ export default function PubPackages() {
                   href={pkg.pubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-cyan-950/50 border border-slate-800 hover:border-cyan-500/50 text-cyan-400 text-xs font-semibold flex items-center justify-center gap-2 transition-all"
+                  className="btn-sunset w-full py-2.5 px-4 rounded-xl text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-md shadow-rose-950/40"
                 >
                   <span>Explore on pub.dev</span>
                   <ChevronRight className="w-3.5 h-3.5" />
@@ -191,16 +191,16 @@ export default function PubPackages() {
         </div>
 
         {/* Verification banner note */}
-        <div className="mt-12 p-4 rounded-2xl bg-cyan-950/30 border border-cyan-500/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 p-4 rounded-2xl bg-[#0f1626]/70 border border-slate-800/80 hover:border-rose-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 transition-colors">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-cyan-500/10 flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-5 h-5 text-cyan-400" />
+            <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-5 h-5 text-emerald-400" />
             </div>
             <p className="text-xs sm:text-sm text-slate-300 text-left">
               All packages follow rigorous null-safety guidelines, automated GitHub actions test matrices across Android, iOS, Web & Desktop platforms.
             </p>
           </div>
-          <span className="text-xs font-mono font-semibold text-cyan-400 shrink-0">
+          <span className="text-xs font-mono font-semibold text-rose-400 shrink-0">
             100% Static Analysis Clean
           </span>
         </div>

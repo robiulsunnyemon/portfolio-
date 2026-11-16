@@ -9,8 +9,8 @@ export default function StatsCounter() {
       value: "3+",
       label: "Pub.dev Packages",
       description: "Verified publisher robiulsuny.com",
-      accent: "text-cyan-400",
-      bg: "bg-cyan-500/10 border-cyan-500/20"
+      accent: "text-rose-400",
+      bg: "bg-rose-500/15 border-rose-500/30"
     },
     {
       icon: Award,
@@ -18,7 +18,7 @@ export default function StatsCounter() {
       label: "Pub.dev Points",
       description: "100% Quality, Static Analysis & Docs",
       accent: "text-amber-400",
-      bg: "bg-amber-500/10 border-amber-500/20"
+      bg: "bg-amber-500/15 border-amber-500/30"
     },
     {
       icon: Download,
@@ -26,23 +26,23 @@ export default function StatsCounter() {
       label: "Package Downloads",
       description: "Active developers relying on packages",
       accent: "text-emerald-400",
-      bg: "bg-emerald-500/10 border-emerald-500/20"
+      bg: "bg-emerald-500/15 border-emerald-500/30"
     },
     {
       icon: Smartphone,
       value: "Play Store",
       label: "Published Apps",
       description: "Production mobile apps in active use",
-      accent: "text-blue-400",
-      bg: "bg-blue-500/10 border-blue-500/20"
+      accent: "text-orange-400",
+      bg: "bg-orange-500/15 border-orange-500/30"
     },
     {
       icon: Server,
       value: "5+ Stacks",
       label: "Tech Ecosystems",
       description: "Flutter, FastAPI, Spring Boot, Go, AWS",
-      accent: "text-purple-400",
-      bg: "bg-purple-500/10 border-purple-500/20"
+      accent: "text-pink-400",
+      bg: "bg-pink-500/15 border-pink-500/30"
     }
   ];
 

@@ -30,7 +30,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#070c18] text-slate-100 flex flex-col font-sans selection:bg-cyan-500/20 selection:text-cyan-300">
+    <div className="min-h-screen bg-[#080c16] text-slate-100 flex flex-col font-sans selection:bg-rose-500/25 selection:text-rose-200">
       {/* Navigation Bar */}
       <Navbar onOpenAdmin={() => setIsAdminOpen(true)} />
 

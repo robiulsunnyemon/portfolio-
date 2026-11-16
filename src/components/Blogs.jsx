@@ -80,15 +80,15 @@ export default function Blogs({ onOpenAdmin, onOpenReader }) {
   return (
     <section id="blogs" className="py-24 relative overflow-hidden">
       {/* Decorative gradient blobs */}
-      <div className="absolute top-1/3 right-0 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div className="absolute top-1/3 right-0 w-80 h-80 bg-rose-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div className="absolute bottom-10 left-10 w-72 h-72 bg-orange-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-3 max-w-2xl text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/80 border border-blue-500/30 text-blue-400 text-xs font-semibold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-950/70 border border-rose-500/30 text-rose-300 text-xs font-semibold uppercase tracking-wider">
               <HashnodeIcon className="w-3.5 h-3.5" />
               <span>Published on robiulsuny.hashnode.dev & Git CMS</span>
             </div>
@@ -104,7 +104,7 @@ export default function Blogs({ onOpenAdmin, onOpenReader }) {
             {/* Open Admin Markdown Dashboard button */}
             <button
               onClick={onOpenAdmin}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white text-xs font-semibold shadow-md shadow-cyan-500/20 transition-all hover:scale-[1.02]"
+              className="btn-sunset inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-white text-xs font-semibold shadow-md shadow-rose-950/40 transition-all hover:scale-[1.02]"
             >
               <PenTool className="w-3.5 h-3.5" />
               <span>Write Blog (Admin CMS)</span>
@@ -114,10 +114,10 @@ export default function Blogs({ onOpenAdmin, onOpenReader }) {
               href={personalInfo.socials.hashnode}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700/80 hover:border-blue-500/50 text-slate-200 hover:text-white text-xs font-semibold transition-all hover:bg-slate-800"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700/80 hover:border-rose-500/50 text-slate-200 hover:text-white text-xs font-semibold transition-all hover:bg-slate-800"
             >
               <span>Hashnode</span>
-              <ExternalLink className="w-3.5 h-3.5 text-blue-400" />
+              <ExternalLink className="w-3.5 h-3.5 text-rose-400" />
             </a>
           </div>
         </div>
@@ -130,13 +130,13 @@ export default function Blogs({ onOpenAdmin, onOpenReader }) {
               onClick={() => setActiveFilter(tab.id)}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 ${
                 activeFilter === tab.id
-                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25'
-                  : 'bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700'
+                  ? 'btn-sunset text-white shadow-lg shadow-rose-950/40'
+                  : 'bg-[#101728] text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700'
               }`}
             >
               <span>{tab.label}</span>
               <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
-                activeFilter === tab.id ? 'bg-blue-900 text-blue-200' : 'bg-slate-800 text-slate-400'
+                activeFilter === tab.id ? 'bg-black/30 text-white' : 'bg-slate-800 text-slate-400'
               }`}>
                 {tab.count}
               </span>
@@ -154,7 +154,7 @@ export default function Blogs({ onOpenAdmin, onOpenReader }) {
             return (
               <article
                 key={blogKey}
-                className="glass-card rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-800 hover:border-blue-500/40 relative group text-left"
+                className="glass-card rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-800 hover:border-rose-500/40 relative group text-left transition-all duration-300"
               >
                 <div>
                   {/* Blog Cover Image */}
@@ -171,13 +171,13 @@ export default function Blogs({ onOpenAdmin, onOpenReader }) {
                     <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
                       <span className={`text-[10px] font-mono px-2.5 py-0.5 rounded-full backdrop-blur-md border ${
                         isSelfHosted 
-                          ? 'bg-cyan-950/90 text-cyan-300 border-cyan-500/40' 
-                          : 'bg-slate-900/85 text-blue-300 border-slate-700/80'
+                          ? 'bg-rose-950/90 text-rose-300 border-rose-500/40' 
+                          : 'bg-slate-900/85 text-rose-300 border-slate-700/80'
                       }`}>
                         {blog.platform || 'Git-CMS'}
                       </span>
                       <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-slate-900/85 backdrop-blur-md text-slate-300 border border-slate-700/80 flex items-center gap-1">
-                        <Clock className="w-3 h-3 text-cyan-400" />
+                        <Clock className="w-3 h-3 text-amber-400" />
                         {blog.readTime}
                       </span>
                     </div>
@@ -191,7 +191,7 @@ export default function Blogs({ onOpenAdmin, onOpenReader }) {
                   {/* Body Content */}
                   <div className="p-6">
                     {/* Title */}
-                    <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-blue-300 transition-colors leading-snug line-clamp-2">
+                    <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-rose-300 transition-colors leading-snug line-clamp-2">
                       <button
                         onClick={() => {
                           if (isSelfHosted) onOpenReader(blog);
@@ -205,7 +205,7 @@ export default function Blogs({ onOpenAdmin, onOpenReader }) {
 
                     {/* Subtitle in Bengali */}
                     {blog.subtitle && (
-                      <p className="text-xs font-bn text-cyan-400/95 mt-2 line-clamp-1">
+                      <p className="text-xs font-bn text-rose-400/95 mt-2 line-clamp-1">
                         {blog.subtitle}
                       </p>
                     )}
@@ -247,7 +247,7 @@ export default function Blogs({ onOpenAdmin, onOpenReader }) {
                   {isSelfHosted ? (
                     <button
                       onClick={() => onOpenReader(blog)}
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-400 hover:text-rose-300 transition-colors"
                     >
                       <span>Read Markdown</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -257,7 +257,7 @@ export default function Blogs({ onOpenAdmin, onOpenReader }) {
                       href={blog.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300 group-hover:translate-x-0.5 transition-transform"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-400 hover:text-rose-300 group-hover:translate-x-0.5 transition-transform"
                     >
                       <span>Read on Hashnode</span>
                       <ArrowRight className="w-3.5 h-3.5" />
