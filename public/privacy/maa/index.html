@@ -98,14 +98,14 @@
     </div>
 
     <div class="card">
-      <h2>২. চিকিৎসাগত দাবিত্যাগ ও তথ্যসূত্র (Medical Disclaimer &amp; Citations)</h2>
+      <h2>২. চিকিৎসাগত দাবিত্যাগ ও তথ্যসূত্র (Medical Disclaimer & Citations)</h2>
       <p>
         <strong>মা - প্রেগন্যান্সি কেয়ার</strong> কোনো ক্লিনিক্যাল ডায়াগনস্টিক ডিভাইস বা সরাসরি চিকিৎসকের বিকল্প নয়। এটি শুধুমাত্র গর্ভকালীন সাধারণ স্বাস্থ্য সচেতনতা ও দৈনন্দিন ট্র্যাকিংয়ের জন্য তৈরি। যেকোনো শারীরিক জটিলতা বা ওষুধ গ্রহণের পূর্বে অবশ্যই একজন রেজিস্টার্ড চিকিৎসকের পরামর্শ নিন।
       </p>
       <p><strong>অনুসৃত আন্তর্জাতিক ও জাতীয় মেডিকেল তথ্যসূত্র:</strong></p>
       <ul>
         <li><a href="https://www.who.int/publications/i/item/9789241549912" target="_blank" rel="noopener">World Health Organization (WHO) — Recommendations on Antenatal Care for a Positive Pregnancy Experience</a></li>
-        <li><a href="https://www.acog.org/womens-health/pregnancy" target="_blank" rel="noopener">American College of Obstetricians and Gynecologists (ACOG) — Pregnancy &amp; Nutrition Guidelines</a></li>
+        <li><a href="https://www.acog.org/womens-health/pregnancy" target="_blank" rel="noopener">American College of Obstetricians and Gynecologists (ACOG) — Pregnancy & Nutrition Guidelines</a></li>
         <li><a href="https://www.unicef.org/health/maternal-and-newborn-health" target="_blank" rel="noopener">UNICEF Maternal and Newborn Health Guidelines</a></li>
         <li><a href="https://dghs.gov.bd" target="_blank" rel="noopener">স্বাস্থ্য অধিদপ্তর (DGHS), স্বাস্থ্য ও পরিবার কল্যাণ মন্ত্রণালয়, বাংলাদেশ</a></li>
       </ul>
@@ -133,13 +133,64 @@
         <li><strong>ওয়েব / ইমেইলের মাধ্যমে (অ্যাপ আনইনস্টল করার পর / Via Email):</strong> নিচের বক্সে আপনার নিবন্ধিত মোবাইল নম্বর লিখে <strong>"ডাটা মুছে ফেলার অনুরোধ পাঠান"</strong> বাটনে ক্লিক করুন অথবা <a href="mailto:robiulsunyemon@gmail.com">robiulsunyemon@gmail.com</a>-এ ইমেইল করুন (৪৮ ঘণ্টার মধ্যে আপনার সকল ক্লাউড তথ্য মুছে ফেলা হবে):</li>
       </ul>
       <div style="margin-top: 14px; padding: 16px; background: #FFF5F8; border: 1px solid #F3DCE4; border-radius: 12px;">
-        <label for="delPhone" style="display:block; font-weight:600; margin-bottom:6px;">আপনার নিবন্ধিত মোবাইল নম্বর (Registered Phone Number):</label>
-        <input id="delPhone" type="tel" placeholder="যেমন: 017XXXXXXXX" style="width:100%; max-width:320px; padding:10px 12px; border:1px solid #D81B60; border-radius:8px; font-size:15px; margin-bottom:10px;" />
-        <br />
-        <button type="button" onclick="var p=document.getElementById('delPhone').value.trim(); if(!p){alert('অনুগ্রহ করে আপনার মোবাইল নম্বর লিখুন');return;} window.location.href='mailto:robiulsunyemon@gmail.com?subject=Data%20Deletion%20Request%20-%20Maa%20App&body=Please%20permanently%20delete%20all%20cloud%20profile%20data%20associated%20with%20phone%20number:%20'+encodeURIComponent(p);" style="background:#D81B60; color:#fff; border:none; padding:10px 18px; border-radius:8px; font-weight:600; cursor:pointer; font-size:14px;">
-          ডাটা মুছে ফেলার অনুরোধ পাঠান (Request Data Deletion)
-        </button>
+        <form id="deleteDataForm" onsubmit="submitDeletionRequest(event)">
+          <label for="delPhone" style="display:block; font-weight:600; margin-bottom:6px;">আপনার নিবন্ধিত মোবাইল নম্বর (Registered Phone Number):</label>
+          <input id="delPhone" name="phone" type="tel" required placeholder="যেমন: 017XXXXXXXX" style="width:100%; max-width:320px; padding:10px 12px; border:1px solid #D81B60; border-radius:8px; font-size:15px; margin-bottom:10px;" />
+          <br />
+          <button id="delSubmitBtn" type="submit" style="background:#D81B60; color:#fff; border:none; padding:10px 18px; border-radius:8px; font-weight:600; cursor:pointer; font-size:14px;">
+            ডাটা মুছে ফেলার অনুরোধ পাঠান (Request Data Deletion)
+          </button>
+        </form>
+        <p id="delStatus" style="margin:10px 0 0; font-size:13.5px; font-weight:600; display:none;"></p>
+        <p style="margin:10px 0 0; font-size:12.5px; color:var(--muted);">
+          অথবা সরাসরি ইমেইল করুন: <a href="mailto:robiulsunyemon@gmail.com?subject=Data%20Deletion%20Request%20-%20Maa%20App">robiulsunyemon@gmail.com</a>
+        </p>
       </div>
+      <script>
+        async function submitDeletionRequest(e) {
+          e.preventDefault();
+          var phone = document.getElementById('delPhone').value.trim();
+          var btn = document.getElementById('delSubmitBtn');
+          var status = document.getElementById('delStatus');
+          if (!phone) {
+            alert('অনুগ্রহ করে আপনার মোবাইল নম্বর লিখুন');
+            return;
+          }
+          btn.disabled = true;
+          btn.textContent = 'পাঠানো হচ্ছে... (Sending...)';
+          status.style.display = 'none';
+          try {
+            var res = await fetch('https://formsubmit.co/ajax/robiulsunyemon@gmail.com', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify({
+                _subject: 'Data Deletion Request - Maa App (com.robiulsuny.ma)',
+                app: 'Maa: Pregnancy Care (com.robiulsuny.ma)',
+                registered_phone: phone,
+                message: 'Please permanently delete all cloud profile data associated with phone number: ' + phone
+              })
+            });
+            if (res.ok) {
+              status.style.display = 'block';
+              status.style.color = '#00897B';
+              status.textContent = '✅ আপনার ডাটা মুছে ফেলার অনুরোধ সফলভাবে পাঠানো হয়েছে! ৪৮ ঘণ্টার মধ্যে আপনার তথ্য মুছে ফেলা হবে। (Request sent successfully!)';
+              document.getElementById('delPhone').value = '';
+            } else {
+              throw new Error('Request failed');
+            }
+          } catch (err) {
+            status.style.display = 'block';
+            status.style.color = '#D81B60';
+            status.textContent = '⚠️ অনুরোধ পাঠাতে সমস্যা হয়েছে। অনুগ্রহ করে সরাসরি robiulsunyemon@gmail.com-এ ইমেইল করুন।';
+          } finally {
+            btn.disabled = false;
+            btn.textContent = 'ডাটা মুছে ফেলার অনুরোধ পাঠান (Request Data Deletion)';
+          }
+        }
+      </script>
     </div>
 
     <div class="card">
