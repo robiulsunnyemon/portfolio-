@@ -296,7 +296,7 @@ export default function AdminDashboard({ isOpen, onClose, onPostPublished }) {
         {/* Top Navbar */}
         <div className="px-5 py-3.5 bg-[#060a14] border-b border-slate-800 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-cyan-500/20">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-rose-500 via-pink-500 to-amber-500 flex items-center justify-center text-white shadow-md shadow-rose-950/40">
               <FolderGit2 className="w-5 h-5" />
             </div>
             <div>
@@ -304,7 +304,7 @@ export default function AdminDashboard({ isOpen, onClose, onPostPublished }) {
                 <span className="font-bold text-white text-sm sm:text-base tracking-tight">
                   Git-as-a-CMS Dashboard
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-500/30">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-rose-950 text-rose-300 border border-rose-500/30">
                   GitHub API
                 </span>
               </div>
@@ -320,7 +320,7 @@ export default function AdminDashboard({ isOpen, onClose, onPostPublished }) {
               onClick={() => setActiveTab('editor')}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
                 activeTab === 'editor'
-                  ? 'bg-cyan-500 text-slate-950 shadow-md'
+                  ? 'btn-sunset text-white shadow-md shadow-rose-950/40'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -332,7 +332,7 @@ export default function AdminDashboard({ isOpen, onClose, onPostPublished }) {
               onClick={() => setActiveTab('posts')}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
                 activeTab === 'posts'
-                  ? 'bg-cyan-500 text-slate-950 shadow-md'
+                  ? 'btn-sunset text-white shadow-md shadow-rose-950/40'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -347,7 +347,7 @@ export default function AdminDashboard({ isOpen, onClose, onPostPublished }) {
               onClick={() => setActiveTab('settings')}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
                 activeTab === 'settings'
-                  ? 'bg-cyan-500 text-slate-950 shadow-md'
+                  ? 'btn-sunset text-white shadow-md shadow-rose-950/40'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -361,7 +361,7 @@ export default function AdminDashboard({ isOpen, onClose, onPostPublished }) {
           <div className="flex items-center gap-2">
             <button
               onClick={handleNewPost}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-slate-700 transition-colors"
+              className="btn-sunset hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-white text-xs font-semibold shadow-sm transition-all"
             >
               <Plus className="w-3.5 h-3.5" />
               <span>New Post</span>
@@ -623,7 +623,7 @@ export default function AdminDashboard({ isOpen, onClose, onPostPublished }) {
                 type="button"
                 onClick={handlePublishToGitHub}
                 disabled={isPublishing}
-                className="px-5 py-2 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white text-xs font-semibold flex items-center gap-2 shadow-lg shadow-cyan-500/25 transition-all disabled:opacity-50"
+                className="btn-sunset px-5 py-2 rounded-xl text-white text-xs font-semibold flex items-center gap-2 shadow-lg shadow-rose-950/40 transition-all disabled:opacity-50"
               >
                 {isPublishing ? (
                   <>
@@ -815,7 +815,7 @@ export default function AdminDashboard({ isOpen, onClose, onPostPublished }) {
                   </>
                 ) : (
                   <div className="flex items-center gap-3">
-                    <Key className="w-6 h-6 text-cyan-400 shrink-0" />
+                    <Key className="w-6 h-6 text-rose-400 shrink-0" />
                     <p className="text-xs text-slate-300">
                       Not connected yet. Enter your GitHub Personal Access Token below to enable publishing.
                     </p>
@@ -839,7 +839,7 @@ export default function AdminDashboard({ isOpen, onClose, onPostPublished }) {
                       href="https://github.com/settings/tokens/new?scopes=repo&description=Portfolio+Git+CMS"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-cyan-400 hover:underline text-[11px] font-normal flex items-center gap-1"
+                      className="text-rose-400 hover:text-rose-300 hover:underline text-[11px] font-normal flex items-center gap-1"
                     >
                       Generate token on GitHub <ExternalLink className="w-3 h-3" />
                     </a>
@@ -849,7 +849,7 @@ export default function AdminDashboard({ isOpen, onClose, onPostPublished }) {
                     value={settings.token}
                     onChange={(e) => setSettings({ ...settings, token: e.target.value })}
                     placeholder="ghp_xxxxxxxxxxxxxxxxxxxx or github_pat_xxxxxxxx"
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-white placeholder-slate-600 focus:border-cyan-500 outline-hidden"
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-white placeholder-slate-600 focus:border-rose-500 outline-hidden"
                   />
                   <p className="text-[11px] text-slate-500 mt-1">
                     Your token is stored locally in your browser's `localStorage` and never sent to any third-party server.
@@ -865,7 +865,7 @@ export default function AdminDashboard({ isOpen, onClose, onPostPublished }) {
                       type="text"
                       value={settings.owner}
                       onChange={(e) => setSettings({ ...settings, owner: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono outline-hidden"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono outline-hidden focus:border-rose-500"
                     />
                   </div>
 
@@ -877,7 +877,7 @@ export default function AdminDashboard({ isOpen, onClose, onPostPublished }) {
                       type="text"
                       value={settings.repo}
                       onChange={(e) => setSettings({ ...settings, repo: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono outline-hidden"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono outline-hidden focus:border-rose-500"
                     />
                   </div>
 
@@ -889,7 +889,7 @@ export default function AdminDashboard({ isOpen, onClose, onPostPublished }) {
                       type="text"
                       value={settings.branch}
                       onChange={(e) => setSettings({ ...settings, branch: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono outline-hidden"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono outline-hidden focus:border-rose-500"
                     />
                   </div>
 
@@ -902,7 +902,7 @@ export default function AdminDashboard({ isOpen, onClose, onPostPublished }) {
                       value={settings.path}
                       onChange={(e) => setSettings({ ...settings, path: e.target.value })}
                       placeholder="content/blogs"
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono outline-hidden"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white font-mono outline-hidden focus:border-rose-500"
                     />
                   </div>
                 </div>
@@ -915,7 +915,7 @@ export default function AdminDashboard({ isOpen, onClose, onPostPublished }) {
                       verifyToken(settings.token);
                     }}
                     disabled={isVerifying}
-                    className="px-5 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold flex items-center gap-2 shadow-md transition-colors"
+                    className="btn-sunset px-5 py-2.5 rounded-xl text-white text-xs font-semibold flex items-center gap-2 shadow-md shadow-rose-950/40 transition-colors"
                   >
                     {isVerifying ? (
                       <>
