@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { personalInfo } from '../data/portfolioData';
+import TextLogo from './TextLogo';
 import { 
   Code2, 
   Menu, 
@@ -46,23 +47,8 @@ export default function Navbar({ onOpenAdmin }) {
         <div className="flex items-center justify-between">
           
           {/* Logo / Brand */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-500 via-pink-500 to-amber-500 flex items-center justify-center text-white shadow-md shadow-rose-500/25 group-hover:scale-105 transition-transform">
-              <Terminal className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-lg text-white tracking-tight group-hover:text-rose-400 transition-colors">
-                  {personalInfo.name}
-                </span>
-                <span className="text-xs px-2 py-0.5 rounded-full bg-rose-950/80 border border-rose-500/40 text-rose-300 font-mono">
-                  makTech
-                </span>
-              </div>
-              <p className="text-xs text-slate-400 font-bn">
-                {personalInfo.nameBn} • Software Engineer
-              </p>
-            </div>
+          <a href="#" className="flex items-center">
+            <TextLogo />
           </a>
 
           {/* Desktop Navigation Links */}

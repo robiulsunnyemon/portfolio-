@@ -1,5 +1,6 @@
 import React from 'react';
 import { personalInfo } from '../data/portfolioData';
+import TextLogo from './TextLogo';
 import { 
   Terminal, 
   Package, 
@@ -21,16 +22,8 @@ export default function Footer({ onOpenAdmin }) {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800/80">
           
           {/* Brand */}
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-rose-500 via-pink-500 to-amber-500 flex items-center justify-center text-white shadow-md shadow-rose-950/40">
-              <Terminal className="w-4 h-4 text-white" />
-            </div>
-            <div className="text-left">
-              <p className="font-bold text-sm text-white">{personalInfo.name}</p>
-              <p className="text-[11px] text-slate-400 font-bn">
-                {personalInfo.nameBn} • Software Engineer @ {personalInfo.company}
-              </p>
-            </div>
+          <div className="flex items-center">
+            <TextLogo />
           </div>
 
           {/* Social Links */}
