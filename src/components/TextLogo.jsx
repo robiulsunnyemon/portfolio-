@@ -2,63 +2,90 @@ import React from 'react';
 
 /**
  * TextLogo Component
- * A modern, high-contrast typographic logo for "Robiul Suny"
- * styled with the sunset rose-coral gradient and developer accents.
+ * Custom stacked typographic logo inspired by user design:
+ * Line 1: Robiul
+ * Divider: Horizontal sunset gradient line
+ * Line 2: Suny <//>
+ * Styled with the website's dark obsidian and sunset rose-amber palette.
  */
 export default function TextLogo({ size = 'default', showSubtitle = true, className = '' }) {
   const isLarge = size === 'large';
   const isCompact = size === 'compact';
 
   return (
-    <div className={`flex items-center gap-3 group select-none ${className}`}>
-      {/* Brand Icon / Code Monogram Badge */}
-      <div className="relative shrink-0 flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-[#151c2e] to-[#0c1220] border border-rose-500/30 group-hover:border-rose-400/60 shadow-lg shadow-rose-950/40 transition-all duration-300 group-hover:scale-105">
-        <div className="flex items-center font-mono font-black text-sm tracking-tighter">
-          <span className="text-white/80">&lt;</span>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-amber-300">
-            RS
-          </span>
-          <span className="text-rose-400/90">&#47;&gt;</span>
-        </div>
-        {/* Glowing pulse indicator */}
-        <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gradient-to-r from-rose-500 to-amber-400 border border-[#080c16]"></span>
+    <div className={`flex items-center gap-3.5 group select-none ${className}`}>
+      {/* 2-Tier Stacked Text Logo */}
+      <div className="flex flex-col items-start leading-none">
+        
+        {/* Top: Robiul */}
+        <span 
+          className={`font-black tracking-tight text-white group-hover:text-rose-100 transition-colors ${
+            isLarge 
+              ? 'text-3xl tracking-tight' 
+              : isCompact 
+                ? 'text-base tracking-tight' 
+                : 'text-xl sm:text-2xl tracking-tight'
+          }`}
+          style={{ letterSpacing: '-0.03em' }}
+        >
+          Robiul
         </span>
-      </div>
 
-      {/* Typographic Text Logo */}
-      <div className="flex flex-col text-left">
+        {/* Horizontal Divider Line matching the web's sunset theme */}
+        <div 
+          className={`w-full rounded-full bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 group-hover:shadow-[0_0_10px_rgba(244,63,94,0.7)] transition-all duration-300 ${
+            isLarge 
+              ? 'h-[3px] my-1' 
+              : isCompact 
+                ? 'h-[2px] my-0.5' 
+                : 'h-[2.5px] my-1'
+          }`}
+        />
+
+        {/* Bottom: Suny <//> */}
         <div className="flex items-center gap-1.5 leading-none">
-          <span className={`font-black tracking-tight text-white transition-colors duration-200 ${
-            isLarge ? 'text-2xl' : isCompact ? 'text-base' : 'text-xl'
-          }`}>
-            Robiul
-          </span>
-
-          <span className={`font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-amber-400 transition-all duration-300 ${
-            isLarge ? 'text-2xl' : isCompact ? 'text-base' : 'text-xl'
-          }`}>
+          <span 
+            className={`font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-amber-400 transition-all duration-300 ${
+              isLarge 
+                ? 'text-2xl' 
+                : isCompact 
+                  ? 'text-sm' 
+                  : 'text-lg sm:text-xl'
+            }`}
+            style={{ letterSpacing: '-0.02em' }}
+          >
             Suny
           </span>
 
-          {/* Accent Dot */}
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-gradient-to-r from-rose-500 to-amber-400 shadow-[0_0_8px_rgba(244,63,94,0.7)] group-hover:scale-125 transition-transform duration-300"></span>
-
-          {/* Workplace / Title Pill */}
-          <span className="ml-1 text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-rose-950/70 border border-rose-500/30 text-rose-300 group-hover:border-rose-400/50 transition-colors">
-            makTech
+          <span 
+            className={`font-mono font-black text-rose-400 group-hover:text-amber-300 transition-colors duration-200 tracking-tighter ${
+              isLarge 
+                ? 'text-xl' 
+                : isCompact 
+                  ? 'text-xs' 
+                  : 'text-base sm:text-lg'
+            }`}
+          >
+            &lt;&#47;&#47;&gt;
           </span>
         </div>
 
-        {showSubtitle && (
-          <p className="text-[11px] text-slate-400 font-bn tracking-normal mt-1 leading-tight flex items-center gap-1.5">
-            <span>রবিউল সানি</span>
-            <span className="text-slate-600">•</span>
-            <span className="text-slate-400">Software Engineer</span>
-          </p>
-        )}
       </div>
+
+      {/* Side Badge & Role (Optional subtitle in desktop view) */}
+      {showSubtitle && (
+        <div className="hidden sm:flex flex-col border-l border-slate-800/80 pl-3 text-left">
+          <div className="flex items-center gap-1.5">
+            <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-rose-950/80 border border-rose-500/30 text-rose-300">
+              makTech
+            </span>
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" title="Available for projects"></span>
+          </div>
+          <span className="text-[11px] text-slate-400 font-bn mt-0.5">
+            Software Engineer
+          </span>
+        </div>
+      )}
     </div>
   );
 }
