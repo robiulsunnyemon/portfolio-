@@ -2,10 +2,11 @@
 
 @layer base {
   body {
-    font-family: 'Inter', 'Hind Siliguri', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Hind Siliguri', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: #070c18;
-    color: #f1f5f9;
-    letter-spacing: -0.011em;
+    color: #f8fafc;
+    letter-spacing: 0;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -15,12 +16,12 @@
   }
 
   .font-bn {
-    font-family: 'Hind Siliguri', 'Inter', sans-serif;
+    font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
     letter-spacing: normal;
   }
 
   .font-noto-bn {
-    font-family: 'Hind Siliguri', 'Inter', sans-serif;
+    font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
     letter-spacing: normal;
   }
 }

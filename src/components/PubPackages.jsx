@@ -125,17 +125,17 @@ export default function PubPackages() {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-slate-300 leading-relaxed mb-5 min-h-[4rem]">
+                <p className="text-[13.5px] sm:text-sm text-slate-200/95 leading-relaxed mb-5 min-h-[4rem] font-normal">
                   {pkg.description}
                 </p>
 
                 {/* Key Highlights */}
-                <div className="space-y-2 mb-6">
-                  <p className="text-xs uppercase font-semibold text-slate-400 tracking-wider">
+                <div className="space-y-2.5 mb-6">
+                  <p className="text-xs uppercase font-semibold text-cyan-400 tracking-wider">
                     Key Capabilities:
                   </p>
                   {pkg.highlights.map((item, i) => (
-                    <div key={i} className="flex items-start gap-2 text-xs text-slate-300">
+                    <div key={i} className="flex items-start gap-2.5 text-[12.5px] sm:text-xs text-slate-200 leading-relaxed font-normal">
                       <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </div>
